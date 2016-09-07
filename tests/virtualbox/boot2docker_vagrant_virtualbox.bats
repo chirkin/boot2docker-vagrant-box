@@ -3,7 +3,7 @@
 # Given i'm already in a Vagrantfile-ized folder
 # And the basebox has already been added to vagrant
 
-DOCKER_TARGET_VERSION=1.11.1
+DOCKER_TARGET_VERSION=1.12.1
 
 @test "We can vagrant up the VM with basic settings" {
 	# Ensure the VM is stopped
@@ -34,6 +34,7 @@ DOCKER_TARGET_VERSION=1.11.1
 	DOCKER_VERSION=$(vagrant ssh -c "docker version --format '{{.Server.Version}}'" -- -n -T)
 	[ "${DOCKER_VERSION}" == "${DOCKER_TARGET_VERSION}" ]
 }
+
 
 @test "My bootlocal.sh script, should have been run at boot" {
 	[ $(vagrant ssh -c 'grep OK /tmp/token-boot-local | wc -l' -- -n -T) -eq 1 ]

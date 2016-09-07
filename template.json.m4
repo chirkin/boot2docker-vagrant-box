@@ -1,15 +1,15 @@
-
+changequote(<!,!>)
 {
     "push": {
       "name": "",
       "vcs": true
     },
     "variables": {
-        "ATLAS_USERNAME": "chirkin",
-        "ATLAS_NAME": "boot2docker-py",
-        "B2D_VERSION": "1.12.1",
-        "B2D_ISO_FILE": "boot2docker.iso",
-        "B2D_ISO_CHECKSUM": "2b638819f1a5143a5a6578795b77874a"
+        "ATLAS_USERNAME": "esyscmd(printf $ATLAS_USERNAME)",
+        "ATLAS_NAME": "esyscmd(printf $ATLAS_NAME)",
+        "B2D_VERSION": "esyscmd(printf $B2D_VERSION)",
+        "B2D_ISO_FILE": "esyscmd(printf $B2D_ISO_FILE)",
+        "B2D_ISO_CHECKSUM": "esyscmd(printf $B2D_ISO_CHECKSUM)"
     },
     "builders": [{
         "type": "virtualbox-iso",
